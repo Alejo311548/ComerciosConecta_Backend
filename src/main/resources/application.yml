@@ -1,11 +1,17 @@
 server:
   port: 8080
 
+#spring:
+  #datasource:
+    #url: jdbc:postgresql://db:5432/comerciosdb
+    #username: postgres
+    #password: example
+
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/comerciosdb
-    username: postgres
-    password: example
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update #lo debo cambiar a validate en desarrollo
